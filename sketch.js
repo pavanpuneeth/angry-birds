@@ -46,7 +46,7 @@ function setup() {
 
 function draw() {
   background(220);
-  console.log(box2.boxBody.angle);
+  //console.log(box2.boxBody.angle);
   text(mouseX+","+mouseY,mouseX,mouseY);
   //refresh the physics engine
   Matter.Engine.update(myEngine);
