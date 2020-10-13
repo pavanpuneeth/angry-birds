@@ -1,11 +1,13 @@
 
-var myWorld,myEngine,groundBody;
+var myWorld,myEngine,groundBody,platform;
 
 var box1,box2;
 var bird;
 var Piggy1,Piggy2;
 
-var log1,log2,log3,log4;
+var log1,log2,log3,log4,log5;
+
+var chain;
 
 function setup() {
   createCanvas(1200, 800);
@@ -15,17 +17,9 @@ function setup() {
   //create the world
   myWorld=myEngine.world;
   
-  var groundProp={
-    isStatic:true
-  }
-  
-  //create the body (1)
-  groundBody=Matter.Bodies.rectangle(600,800,1200,20,groundProp);
-  
-  
-  //adding the body to the world(2)
-  Matter.World.add(myWorld,groundBody);
-  
+  ground=new Ground(600,800,1200,20);
+platform=new Ground(200,680,400,260);
+
   box1=new Box(750,750,50,50);
   box2=new Box(850,750,50,50);
   box3=new Box(750,680,50,50);
@@ -35,6 +29,8 @@ function setup() {
   bird=new Bird(300,300,50,50);
 
 
+  
+
   Piggy1=new Piggy(800,750,30,30);
   Piggy2=new Piggy(800,680,30,30);
 
@@ -42,6 +38,8 @@ function setup() {
   log2=new Log(800,650,20,200,PI/2);
   log3=new Log(750,610,20,110,PI/6);
   log4=new Log(850,610,20,70,-PI/6);
+  log5=new Log(200,600,20,50,PI/2);
+  chain=new Chain();
 }
 
 function draw() {
@@ -50,11 +48,11 @@ function draw() {
   text(mouseX+","+mouseY,mouseX,mouseY);
   //refresh the physics engine
   Matter.Engine.update(myEngine);
-  console.log(groundBody.position.y);
+  //console.log(groundBody.position.y);
   //how should ur ground look like
-  rectMode(CENTER);
-  rect(groundBody.position.x,groundBody.position.y,1200,20);
   
+  ground.display();
+  platform.display();
   box1.display();
   
   box2.display();
@@ -69,5 +67,8 @@ function draw() {
   log2.display();
   log3.display();
   log4.display();
+  log5.display();
+  chain.display();
+  
   //circle(ballBody.position.x,ballBody.position.y,20);
 }
