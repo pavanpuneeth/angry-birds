@@ -1,12 +1,13 @@
 class Chain{
     //properties
-    constructor(){
+
+    constructor(body,point){
         //properties
         var options={
-            bodyA:bird.body,
-            bodyB:log5.body,
+            bodyA:body,
+            pointB:point,
             stiffness:0.01,
-            length:10
+            length:1
         }
         //body
         this.chain=Matter.Constraint.create(options);
@@ -17,7 +18,13 @@ class Chain{
 
     //functions
     display(){
+        if(this.chain.bodyA){
+            line(this.chain.bodyA.position.x,this.chain.bodyA.position.y,this.chain.pointB.x,this.chain.pointB.y);
+        }
         
-        line(this.chain.bodyA.position.x,this.chain.bodyA.position.y,this.chain.bodyB.position.x,this.chain.bodyB.position.y);
+    }
+
+    detach(){
+        this.chain.bodyA=null
     }
 }

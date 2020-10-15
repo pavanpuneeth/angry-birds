@@ -39,7 +39,7 @@ platform=new Ground(200,680,400,260);
   log3=new Log(750,610,20,110,PI/6);
   log4=new Log(850,610,20,70,-PI/6);
   log5=new Log(200,600,20,50,PI/2);
-  chain=new Chain();
+  chain=new Chain(bird.body,{x:350,y:450})
 }
 
 function draw() {
@@ -71,4 +71,16 @@ function draw() {
   chain.display();
   
   //circle(ballBody.position.x,ballBody.position.y,20);
+}
+
+function mouseDragged(){
+  Matter.Body.setPosition(bird.body,{x:mouseX,y:mouseY})
+
+
+}
+
+function mouseReleased(){
+chain.detach()
+
+
 }
