@@ -5,7 +5,7 @@ var box1,box2;
 var bird;
 var Piggy1,Piggy2;
 
-var log1,log2,log3,log4,log5;
+var log1,log2,log3,log4;
 
 var chain;
 
@@ -26,7 +26,7 @@ platform=new Ground(200,680,400,260);
   box4=new Box(850,680,50,50);
   box5=new Box(800,610,50,50);
   
-  bird=new Bird(300,300,50,50);
+  bird=new Bird(280,250,50,50);
 
 
   
@@ -38,8 +38,8 @@ platform=new Ground(200,680,400,260);
   log2=new Log(800,650,20,200,PI/2);
   log3=new Log(750,610,20,110,PI/6);
   log4=new Log(850,610,20,70,-PI/6);
-  log5=new Log(200,600,20,50,PI/2);
-  chain=new Chain(bird.body,{x:350,y:450})
+  //log5=new Log(200,600,20,50,PI/2);
+  chain=new Chain(bird.body,{x:332,y:380})
 }
 
 function draw() {
@@ -67,7 +67,7 @@ function draw() {
   log2.display();
   log3.display();
   log4.display();
-  log5.display();
+  //log5.display();
   chain.display();
   
   //circle(ballBody.position.x,ballBody.position.y,20);
