@@ -27,7 +27,7 @@ this.Sling3=loadImage('sprites/sling3.png')
         if(this.chain.bodyA){
             var pointA = this.chain.bodyA.position;
             console.log(pointA);
-            var pointB = this.pointB;
+            var pointB = this.chain.pointB;
             push();
             stroke(48,22,8);
             if(pointA.x<315){
