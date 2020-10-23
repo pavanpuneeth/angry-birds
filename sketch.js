@@ -84,3 +84,11 @@ chain.detach()
 
 
 }
+
+function keyPressed(){
+if(keyCode===32){
+  chain.attach(bird.body)
+}
+
+
+}

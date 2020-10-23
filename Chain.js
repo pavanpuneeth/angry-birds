@@ -26,7 +26,7 @@ this.Sling3=loadImage('sprites/sling3.png')
     image(this.Sling2,300,350);
         if(this.chain.bodyA){
             var pointA = this.chain.bodyA.position;
-            console.log(pointA);
+            //console.log(pointA);
             var pointB = this.chain.pointB;
             push();
             stroke(48,22,8);
@@ -50,5 +50,9 @@ this.Sling3=loadImage('sprites/sling3.png')
 
     detach(){
         this.chain.bodyA=null
+    }
+
+    attach(body){
+        this.chain.bodyA=body
     }
 }
